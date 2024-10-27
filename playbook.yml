@@ -1,0 +1,15 @@
+---
+- name: Start install blog
+  hosts: blog
+  become: yes
+  vars:
+    mysql_root_password: "root"
+    mysql_user: "cyber"
+    mysql_user_password: "pass2023"
+    db_name: "cyber23"
+    git_repo: "https://github.com/jonisetiyawan48/cyber_ukk.git"
+    web_root: "/var/www/html"
+  roles:
+    - apache2
+    - mysql
+    - blog
